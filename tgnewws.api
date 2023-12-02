@@ -1,0 +1,17 @@
+syntax = "v1"
+
+// default
+
+type (
+	DefaultReq {
+	}
+
+	DefaultResp {
+		Code int `json:"code"`
+	}
+)
+
+service gateway {
+	@handler default
+	get / (DefaultReq) returns (DefaultResp)
+}
